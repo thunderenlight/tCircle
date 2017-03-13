@@ -1,2 +1,24 @@
-<h1>Interests#index</h1>
-<p>Find me in app/views/interests/index.html.erb</p>
+<h1>Interests</h1>
+
+<div class="grid row">
+	<% @interests.each do |interest|  %>
+	<div class="col-md-3">
+		<div class="panel panel-default interest">
+			<div class="panel-body">
+				
+			<%= image_tag interest.image.url, class: 'img-responsive' %>
+			</div>
+			<div class="panel-footer">
+				<p><%= interest.description %></p>
+				<h1><%= interest.name %></h1>
+				<div class="interest">
+					<%= link_to("Edit", edit_interest_path(interest)) %>				
+					<%= link_to("Delete", interest, method: :delete, data: { confirm: 'Are you sure?' }) %>				
+				</div>
+					 
+				</div>
+		</div>
+	</div>
+
+	<% end %>
+</div>

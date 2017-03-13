@@ -1,8 +1,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'bootstrap/theme';
+
+
 /* universal */
 
 body {
   padding-top: 60px;
+  background-color: #EEEEEE;
+}
+
+/* masonry */
+
+
+.interest {
+	width: 100%;
+	border-radius: 5px 5px 0px 0px;
+}
+.panel-body {
+	padding: 0px;
+}
+
+.grid-item {
+	margin-bottom: 25px;
 }

@@ -1,2 +1,12 @@
-<h1>Interests#show</h1>
-<p>Find me in app/views/interests/show.html.erb</p>
+<h1>Interests</h1>
+<p>
+	<%= @interest.name %>
+	<%= @interest.description %>
+	<div class="">
+
+		<%= image_tag(@interest.image.url(:thumb)) %>
+	</div>
+
+	<%= link_to("Edit", edit_interest_path(@interest)) %>
+	<%= link_to("Back", interest_path) %>
+</p>

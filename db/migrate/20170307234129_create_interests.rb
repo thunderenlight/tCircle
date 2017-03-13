@@ -3,8 +3,8 @@ class CreateInterests < ActiveRecord::Migration[5.0]
     create_table :interests do |t|
       t.string :name
       t.text :description
-      t.user :references
-      t.board :references
+      t.references :user, foreign_key: true
+      t.references :board, foreign_key: true
 
       t.timestamps
     end

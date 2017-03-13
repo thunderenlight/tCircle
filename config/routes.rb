@@ -1,19 +1,36 @@
 Rails.application.routes.draw do
-  get 'interests/new'
 
-  get 'interests/edit'
+  # get 'boards/index'
 
-  get 'interests/show'
+  # get 'boards/show'
 
-  get 'interests/index'
+  # get 'boards/new'
 
-  get 'interests/destroy'
+  # get 'boards/edit'
 
-  get 'interests/update'
+  # get 'boards/create'
 
-  get 'interests/create'
+  # get 'boards/update'
 
-  # get 'users/show'
+  # get 'boards/destroy'
+
+  resources :boards
+  resources :interests
+
+
+  # get 'interests/edit'
+
+  # get 'interests/show'
+
+  # get 'interests/index'
+
+  # get 'interests/destroy'
+
+  # get 'interests/update'
+
+  # get 'interests/create'
+
+  get 'users/show'
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
