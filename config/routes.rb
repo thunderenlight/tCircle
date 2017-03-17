@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'comments/create'
+
+  get 'home/index'
+
   # get 'boards/index'
 
   # get 'boards/show'
@@ -15,26 +19,14 @@ Rails.application.routes.draw do
   # get 'boards/destroy'
 
   resources :boards
-  resources :interests
-
-
-  # get 'interests/edit'
-
-  # get 'interests/show'
-
-  # get 'interests/index'
-
-  # get 'interests/destroy'
-
-  # get 'interests/update'
-
-  # get 'interests/create'
-
-  get 'users/show'
+  resources :interests do 
+    resources :comments
+  end
+  get '/:username' => 'users#show', as: 'user'
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'users#show'
+  root 'home#index'
 
 end
 

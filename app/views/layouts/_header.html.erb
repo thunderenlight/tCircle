@@ -1,7 +1,7 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom">
   <div class="container">
     <div class="navbar-header">
-      
+      <%= image_tag("tcircle.png", class: "logo") %>
       <%= link_to "TafariCircle", root_path, class:"navbar-brand" %>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
@@ -17,7 +17,7 @@
             <li><%= link_to 'Board', new_board_path %></li>
           </ul>
         </li>
-        <li><%= link_to current_user.email, "users/new" %></li> 
+        <li><%= link_to current_user.username, user_path(current_user.username) %></li> 
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% else %>
         <li><%= link_to "Login", new_user_session_path %></li>

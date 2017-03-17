@@ -32,9 +32,24 @@ class BoardsController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @board.update(board_params)
+        format.html { redirect_to user_path(current_user.username), notice: 'Board was successfully updated.'}
+        format.json { render :show, status: :ok, location: @board }
+      else
+        format.html { render :edit }
+        format.json { render json: @board.errors, status: :unprocessable_entity }
+      end
+
+    end
   end
 
   def destroy
+    @board.destroy
+    respond_to do |format|
+      format.html { redirect_to user_path(current_user.username), notice: 'Board deleted'}
+      format.json { head :no_content }
+    end
   end
 
   private

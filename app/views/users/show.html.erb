@@ -1,8 +1,53 @@
 <% provide(:title, 'Home') %>
-<div class="jumbotron">
+<div class="center jumbotron">
+<% if !user_signed_in? %>
 <h1>TC interest site</h1>
 <p>Welcome to TafariCircle</p>
-<% if !user_signed_in? %>
 <%= link_to("Sign up", new_user_registration_path) %> | <%= link_to("Login", new_user_session_path) %>
+<% else %>
+	<%= image_tag @user.avatar.url(:thumb) %>
+	<h3> <%= @user.username.capitalize %>'s profile.</h3>
+	<p> <%= @user.bio %></p> <br>
+	<strong><%= link_to "Edit Profile", edit_user_registration_path %><br>
+	<h1>My Boards</h1>
+	
+	<% @user.boards.each do |board| %>
+		
+		<div class="panel-footer">
+			<h3><%= link_to board.title, board %></h3>
+			<p><%= board.description %></p>
+			<p>Created on <%= board.created_at.strftime("%A %B %d") %></p>
+		
+		<div class="panel">
+			<%= link_to("Edit", edit_board_path(board)) %> |				
+			<%= link_to("Delete", board, method: :delete, data: { confirm: 'Are you sure?' }) %>				
+		</div>
+	<% end %>
+
+
+	<h1>My Interests</h1>
+	<div class="row grid">
+	<% @user.interests.each do |interest| %>
+		<div class="col-md-3">
+			<div class="panel panel-default interest">
+				<div class="panel-body">
+					
+				<%= link_to image_tag(interest.image.url(:medium)), interest %>
+				</div>
+				<div class="panel-footer">
+					<p><%= interest.description %></p>
+					<p><%= interest.user.username %></p>
+					
+					<div class="interest">
+						<%= link_to("Edit", edit_interest_path(interest)) %> |				
+						<%= link_to("Delete", interest, method: :delete, data: { confirm: 'Are you sure?' }) %>				
+					</div>
+						 
+				</div>
+				</div>
+			</div>
+
+		</div>
+	<% end %>
 <% end %>
 </div>

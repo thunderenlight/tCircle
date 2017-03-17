@@ -6,10 +6,11 @@
 		<div class="panel panel-default interest">
 			<div class="panel-body">
 				
-			<%= image_tag interest.image.url, class: 'img-responsive' %>
+			<%= link_to image_tag(interest.image.url(:medium)), interest %>
 			</div>
 			<div class="panel-footer">
 				<p><%= interest.description %></p>
+				<p>Posted in <%= link_to interest.board.title, interest.board %></p>
 				<h1><%= interest.name %></h1>
 				<div class="interest">
 					<%= link_to("Edit", edit_interest_path(interest)) %>				

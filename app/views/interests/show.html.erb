@@ -1,12 +1,37 @@
-<h1>Interests</h1>
-<p>
-	<%= @interest.name %>
-	<%= @interest.description %>
-	<div class="">
+<div class = "row">
+  <div class = "col-md-8 col-md-offset-2">
 
-		<%= image_tag(@interest.image.url(:thumb)) %>
-	</div>
+    <p>Posted under: <%= link_to @interest.board.title, @interest.board %></p>
 
-	<%= link_to("Edit", edit_interest_path(@interest)) %>
-	<%= link_to("Back", interest_path) %>
-</p>
+    <%= image_tag @interest.image.url, class: 'img-responsive', style: 'width: 100%' %>
+
+    <%= @interest.description %>
+
+
+
+    <h2>Notes and Comments</h2>
+    <% @interest.comments.each do |comment| %>
+      <p><%= comment.body %></p>
+      <p>
+        <strong><%= comment.user.username %></strong>
+      </p>
+
+      <hr>
+
+    <% end %>
+
+    <% if user_signed_in? %>
+      <h2>Add a note or comment:</h2>
+      <%= form_for([@interest, @interest.comments.build]) do |f| %>
+        <p>
+          <%= f.label :comment %><br>
+          <%= f.text_area(:body, size: '50*50') %>
+        </p>
+        <p>
+          <%= f.submit %>
+        </p>
+      <% end %>
+    <% end %>
+
+</div>
+</div>
