@@ -42,6 +42,11 @@ class InterestsController < ApplicationController
    end
 
    def interest_params
-    params.require(:interest).permit(:name, :image, :description, :board_id)
+    params.require(:interest).permit(:name, :image, :description, :board_id, :url)
    end
+   
+   def correct_user
+      @interest = current_user.interests.find_by(id: params[:id])
+      redirect_to interests_path, notice: "Not authorized to edit this interest" if @interest.nil?
+    end
 end

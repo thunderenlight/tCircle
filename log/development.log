@@ -11277,3 +11277,1665 @@ Migrating to AddUrlToInterest (20170317192119)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" ORDER BY "interests"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "interests" SET "updated_at" = ?, "url" = ? WHERE "interests"."id" = ?[0m  [["updated_at", 2017-03-17 19:26:14 UTC], ["url", "https://github.com/galetahub/ckeditor"], ["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2017-03-17 14:29:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/iNjaro/Sites/Rails_Apps/tCircle/app/controllers/application_controller.rb:3)
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (85.6ms)
+  Rendered layouts/_header.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 3975ms (Views: 3759.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 14:29:15 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 119ms (Views: 115.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/diggy" for ::1 at 2017-03-17 14:29:19 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"username"=>"diggy"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "diggy"], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[36mInterest Load (0.1ms)[0m  [1m[34mSELECT "interests".* FROM "interests" WHERE "interests"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.erb within layouts/application (80.9ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 166ms (Views: 158.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/interests/new" for ::1 at 2017-03-17 14:29:30 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered interests/_form.html.erb (176.7ms)
+  Rendered interests/new.html.erb within layouts/application (178.8ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 280ms (Views: 260.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/boards/new" for ::1 at 2017-03-17 14:29:43 -0500
+Processing by BoardsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering boards/new.html.erb within layouts/application
+  Rendered boards/_form.html.erb (4.7ms)
+  Rendered boards/new.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_header.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 123ms (Views: 109.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/boards" for ::1 at 2017-03-17 14:30:01 -0500
+Processing by BoardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bBRQK7dogQBETPj1RFK9rkdwuEP7JdfCSf9wBOFrYrTDgO9KzyzM/OcD/oMBktnuR4/T7Im26JE9ttSsHA8RtA==", "board"=>{"title"=>"phone", "description"=>"jittererbug"}, "commit"=>"Create Board"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "boards" ("title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "phone"], ["description", "jittererbug"], ["user_id", 5], ["created_at", 2017-03-17 19:30:01 UTC], ["updated_at", 2017-03-17 19:30:01 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 14:30:01 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 84ms (Views: 80.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/diggy" for ::1 at 2017-03-17 14:30:07 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"username"=>"diggy"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "diggy"], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT "interests".* FROM "interests" WHERE "interests"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 102ms (Views: 96.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/interests/new" for ::1 at 2017-03-17 14:30:18 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered interests/_form.html.erb (7.1ms)
+  Rendered interests/new.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 108ms (Views: 103.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/interests" for ::1 at 2017-03-17 14:31:35 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5trl+lBSL99tsq34MUe3xgk/hn74LNNySoyD8PHzMnWVDHYutz+3lFMP1pKIIt+3rxSuEqZ9bNDoNW7k3QFlWg==", "interest"=>{"name"=>"swiffer", "description"=>"color", "url"=>"http://colorzilla.com/gradient-editor/#7488e0+0,8994d3+31,060ca8+100", "image"=>#<ActionDispatch::Http::UploadedFile:0x007faf47942ac0 @tempfile=#<Tempfile:/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/RackMultipart20170317-21212-v5dd7w.png>, @original_filename="Screen Shot 2016-06-13 at 7.55.28 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"interest[image]\"; filename=\"Screen Shot 2016-06-13 at 7.55.28 PM.png\"\r\nContent-Type: image/png\r\n">, "board_id"=>"8"}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/297582c24f04e47e4b3aebb3f090d41620170317-21212-17j715u.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/b4ef9412deac198ea055782f3ba49bcc20170317-21212-yrkc1h.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/b4ef9412deac198ea055782f3ba49bcc20170317-21212-yrkc1h.png[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/b4ef9412deac198ea055782f3ba49bcc20170317-21212-yrkc1h.png[0]' -auto-orient -resize "300x300>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/392cea4b062d774a5a9b1eea9e5c08bd20170317-21212-1r5hpqw'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/b4ef9412deac198ea055782f3ba49bcc20170317-21212-yrkc1h.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/b4ef9412deac198ea055782f3ba49bcc20170317-21212-yrkc1h.png[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/b4ef9412deac198ea055782f3ba49bcc20170317-21212-yrkc1h.png[0]' -auto-orient -resize "100x100>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/392cea4b062d774a5a9b1eea9e5c08bd20170317-21212-alyy8w'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/297582c24f04e47e4b3aebb3f090d41620170317-21212-n6tx1b.png'
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "interests" ("name", "description", "user_id", "board_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "swiffer"], ["description", "color"], ["user_id", 5], ["board_id", 8], ["created_at", 2017-03-17 19:31:35 UTC], ["updated_at", 2017-03-17 19:31:35 UTC], ["image_file_name", "Screen_Shot_2016-06-13_at_7.55.28_PM.png"], ["image_content_type", "image/png"], ["image_file_size", 71766], ["image_updated_at", 2017-03-17 19:31:35 UTC], ["url", "http://colorzilla.com/gradient-editor/#7488e0+0,8994d3+31,060ca8+100"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/interests
+Completed 302 Found in 864ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/interests" for ::1 at 2017-03-17 14:31:35 -0500
+Processing by InterestsController#index as HTML
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.7ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered interests/index.html.erb within layouts/application (34.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 150ms (Views: 144.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/interests/12" for ::1 at 2017-03-17 14:31:44 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 12]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (85.5ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 206ms (Views: 199.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/diggy" for ::1 at 2017-03-17 14:32:25 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"username"=>"diggy"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "diggy"], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT "interests".* FROM "interests" WHERE "interests"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.erb within layouts/application (10.5ms)
+  Rendered layouts/_header.html.erb (4.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 106ms (Views: 101.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/interests/12/edit" for ::1 at 2017-03-17 14:32:31 -0500
+Processing by InterestsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `correct_user' for #<InterestsController:0x007faf4a5338c8>):
+  
+activesupport (5.0.2) lib/active_support/callbacks.rb:382:in `block in make_lambda'
+activesupport (5.0.2) lib/active_support/callbacks.rb:150:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:150:in `block (2 levels) in halting_and_conditional'
+actionpack (5.0.2) lib/abstract_controller/callbacks.rb:12:in `call'
+actionpack (5.0.2) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.0.2) lib/active_support/callbacks.rb:151:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+activesupport (5.0.2) lib/active_support/callbacks.rb:454:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:454:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:454:in `each'
+activesupport (5.0.2) lib/active_support/callbacks.rb:454:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.2) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.2) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.2) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.2) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (167.8ms)
+Started GET "/diggy" for ::1 at 2017-03-17 14:32:41 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"username"=>"diggy"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "diggy"], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[36mInterest Load (0.1ms)[0m  [1m[34mSELECT "interests".* FROM "interests" WHERE "interests"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered users/show.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_header.html.erb (5.0ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 125ms (Views: 121.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/interests/12" for ::1 at 2017-03-17 14:32:48 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 12]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_header.html.erb (4.8ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 103ms (Views: 99.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/interests/12/edit" for ::1 at 2017-03-17 14:32:53 -0500
+Processing by InterestsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mInterest Load (0.5ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `correct_user' for #<InterestsController:0x007faf41fa8f28>):
+  
+activesupport (5.0.2) lib/active_support/callbacks.rb:382:in `block in make_lambda'
+activesupport (5.0.2) lib/active_support/callbacks.rb:150:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:150:in `block (2 levels) in halting_and_conditional'
+actionpack (5.0.2) lib/abstract_controller/callbacks.rb:12:in `call'
+actionpack (5.0.2) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.0.2) lib/active_support/callbacks.rb:151:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:151:in `block in halting_and_conditional'
+activesupport (5.0.2) lib/active_support/callbacks.rb:454:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:454:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:454:in `each'
+activesupport (5.0.2) lib/active_support/callbacks.rb:454:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.2) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.2) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.2) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.2) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+warden (1.2.6) lib/warden/manager.rb:34:in `catch'
+warden (1.2.6) lib/warden/manager.rb:34:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (255.8ms)
+Started GET "/interests/12/edit" for ::1 at 2017-03-17 14:35:17 -0500
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/iNjaro/Sites/Rails_Apps/tCircle/app/controllers/application_controller.rb:3)
+Processing by InterestsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."user_id" = ? AND "interests"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", 12], ["LIMIT", 1]]
+  Rendering interests/edit.html.erb within layouts/application
+  Rendered interests/edit.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 139ms (Views: 81.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/interests/12/edit" for ::1 at 2017-03-17 14:36:49 -0500
+Processing by InterestsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."user_id" = ? AND "interests"."id" = ? LIMIT ?[0m  [["user_id", 5], ["id", 12], ["LIMIT", 1]]
+  Rendering interests/edit.html.erb within layouts/application
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered interests/_form.html.erb (27.4ms)
+  Rendered interests/edit.html.erb within layouts/application (31.6ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 119ms (Views: 109.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/interests/new" for ::1 at 2017-03-17 14:37:08 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 5]]
+  Rendered interests/_form.html.erb (7.6ms)
+  Rendered interests/new.html.erb within layouts/application (10.2ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 95ms (Views: 89.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-03-17 14:40:10 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dD8oHNjAZEteWn5VhaRQtpcubODRV2JKvnDtZcJYSrgh7mEgNjwZqQ+KMVohFYy3zZQtd6vbxy7WGIfB+2n9hg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 29ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 14:40:10 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 76ms (Views: 73.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/tc" for ::1 at 2017-03-17 14:40:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/tc"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered collection of /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [43 times] (13.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (155.5ms)
+Started GET "/images/tc" for ::1 at 2017-03-17 14:40:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/tc"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered collection of /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [43 times] (16.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (154.8ms)
+Started GET "/" for ::1 at 2017-03-17 14:40:54 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 116ms (Views: 113.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-03-17 14:41:04 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (24.7ms)
+  Rendered layouts/_header.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 129ms (Views: 127.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-03-17 14:41:23 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kbiXk9kO3T4yDwCQ2hXlgUhSE0ZKiVmXiPyfAj0C59HF380hTLxJDy9Cie0Zirp9m+pKaZ5G57OInj0gEjd5IQ==", "user"=>{"username"=>"betty", "email"=>"bw@pod.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bw@pod.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "betty"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["email", "bw@pod.com"], ["encrypted_password", "$2a$11$fmEkw5iHDQCoGyiq.dJVJuIpl.abZupu1xzBLpK80.uXwUWyHS3Yu"], ["created_at", 2017-03-17 19:41:24 UTC], ["updated_at", 2017-03-17 19:41:24 UTC], ["username", "betty"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", 2017-03-17 19:41:24 UTC], ["last_sign_in_at", 2017-03-17 19:41:24 UTC], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "::1"], ["updated_at", 2017-03-17 19:41:24 UTC], ["id", 6]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 334ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 14:41:24 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_header.html.erb (4.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 96ms (Views: 93.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/betty" for ::1 at 2017-03-17 14:41:30 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"username"=>"betty"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "betty"], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 6]]
+  [1m[36mInterest Load (0.4ms)[0m  [1m[34mSELECT "interests".* FROM "interests" WHERE "interests"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered users/show.html.erb within layouts/application (14.2ms)
+  Rendered layouts/_header.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 120ms (Views: 114.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/interests/new" for ::1 at 2017-03-17 14:41:48 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered interests/_form.html.erb (9.4ms)
+  Rendered interests/new.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_header.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 104ms (Views: 97.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/boards/new" for ::1 at 2017-03-17 14:42:51 -0500
+Processing by BoardsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering boards/new.html.erb within layouts/application
+  Rendered boards/_form.html.erb (3.5ms)
+  Rendered boards/new.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_header.html.erb (8.4ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 109ms (Views: 101.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/boards" for ::1 at 2017-03-17 14:43:12 -0500
+Processing by BoardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mjJide21W3P3nly2k/XCG8BJqiDXgH/LrJpgE166Kaj+0JGwv1pbw5lxDMqwLEwHs+Il3M9pvVv/3wk22EaauQ==", "board"=>{"title"=>"muses", "description"=>"insioarational spirals"}, "commit"=>"Create Board"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "boards" ("title", "description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "muses"], ["description", "insioarational spirals"], ["user_id", 6], ["created_at", 2017-03-17 19:43:12 UTC], ["updated_at", 2017-03-17 19:43:12 UTC]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 14:43:12 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 96ms (Views: 92.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/betty" for ::1 at 2017-03-17 14:43:16 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"username"=>"betty"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "betty"], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 6]]
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT "interests".* FROM "interests" WHERE "interests"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered users/show.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 116ms (Views: 112.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/interests/new" for ::1 at 2017-03-17 14:43:43 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered interests/_form.html.erb (8.0ms)
+  Rendered interests/new.html.erb within layouts/application (10.2ms)
+  Rendered layouts/_header.html.erb (4.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 104ms (Views: 97.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/interests" for ::1 at 2017-03-17 14:44:11 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IjJEXMaXLylQcDU6NnBxbuBe1HwfWnHcMmeCWSB8ZYSfdWQzUizCx1InOCEjZRyfrDW5sJ9QEXjqQOQHeBWuQw==", "interest"=>{"name"=>"scatting", "description"=>"asldjgphpgih spdpfoip posfjpj ", "url"=>"https://soundcloud.com/stream", "image"=>#<ActionDispatch::Http::UploadedFile:0x007faf4a0d2bf8 @tempfile=#<Tempfile:/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/RackMultipart20170317-21212-p39gqe.png>, @original_filename="Screen Shot 2016-04-13 at 3.51.47 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"interest[image]\"; filename=\"Screen Shot 2016-04-13 at 3.51.47 PM.png\"\r\nContent-Type: image/png\r\n">, "board_id"=>"9"}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/a77c227c104dd34f39ed7f5bb9246fc920170317-21212-px99e1.png'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/ab7e1d46bd30a424b1ae5a473166d7b720170317-21212-17ulr76.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/ab7e1d46bd30a424b1ae5a473166d7b720170317-21212-17ulr76.png[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/ab7e1d46bd30a424b1ae5a473166d7b720170317-21212-17ulr76.png[0]' -auto-orient -resize "300x300>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/7370e11e2c92d9e6742e3a495f9cbde420170317-21212-kmspl0'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/ab7e1d46bd30a424b1ae5a473166d7b720170317-21212-17ulr76.png[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/ab7e1d46bd30a424b1ae5a473166d7b720170317-21212-17ulr76.png[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/ab7e1d46bd30a424b1ae5a473166d7b720170317-21212-17ulr76.png[0]' -auto-orient -resize "100x100>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/7370e11e2c92d9e6742e3a495f9cbde420170317-21212-h1mvkn'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/a77c227c104dd34f39ed7f5bb9246fc920170317-21212-1jn503i.png'
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "interests" ("name", "description", "user_id", "board_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "scatting"], ["description", "asldjgphpgih spdpfoip posfjpj "], ["user_id", 6], ["board_id", 9], ["created_at", 2017-03-17 19:44:12 UTC], ["updated_at", 2017-03-17 19:44:12 UTC], ["image_file_name", "Screen_Shot_2016-04-13_at_3.51.47_PM.png"], ["image_content_type", "image/png"], ["image_file_size", 93172], ["image_updated_at", 2017-03-17 19:44:11 UTC], ["url", "https://soundcloud.com/stream"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/interests
+Completed 302 Found in 326ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/interests" for ::1 at 2017-03-17 14:44:12 -0500
+Processing by InterestsController#index as HTML
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered interests/index.html.erb within layouts/application (30.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (7.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 130ms (Views: 125.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/interests/13" for ::1 at 2017-03-17 14:44:21 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 13]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (32.1ms)
+  Rendered layouts/_header.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 137ms (Views: 132.0ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/interests/13/comments" for ::1 at 2017-03-17 14:44:36 -0500
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kFBNu3/V1/H38ibcliyYNABI7hB26SMvDIqHJX1fx9L+9zh6pexZsUvwZQYst7GzQDK+/4AoAzgjp1jLEt+mkw==", "comment"=>{"body"=>"here we are"}, "commit"=>"Create Comment", "interest_id"=>"13"}
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("interest_id", "body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["interest_id", 13], ["body", "here we are"], ["user_id", 6], ["created_at", 2017-03-17 19:44:36 UTC], ["updated_at", 2017-03-17 19:44:36 UTC]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/interests/13
+Completed 302 Found in 20ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/interests/13" for ::1 at 2017-03-17 14:44:36 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 13]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 97ms (Views: 93.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/interests/13" for ::1 at 2017-03-17 15:26:55 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 13]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 2758ms (Views: 2753.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/interests/13" for ::1 at 2017-03-17 15:28:30 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mInterest Load (0.7ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 13]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 2785ms (Views: 2778.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/interests/13" for ::1 at 2017-03-17 15:28:52 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mInterest Load (0.1ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 13]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 2684ms (Views: 2679.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/interests/13" for ::1 at 2017-03-17 15:29:16 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mInterest Load (0.1ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 13]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (10.4ms)
+  Rendered layouts/_header.html.erb (4.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 2839ms (Views: 2835.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/betty" for ::1 at 2017-03-17 15:29:36 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"username"=>"betty"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "betty"], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 6]]
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT "interests".* FROM "interests" WHERE "interests"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered users/show.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 96ms (Views: 91.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/interests" for ::1 at 2017-03-17 15:29:44 -0500
+Processing by InterestsController#index as HTML
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered interests/index.html.erb within layouts/application (34.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 129ms (Views: 124.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 15:29:48 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 90ms (Views: 85.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 15:30:00 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 2606ms (Views: 2602.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 15:32:15 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (2.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 96ms (Views: 91.6ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-03-17 15:32:35 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OPenD0v9Wcc88zxmX74oVOVfRqH97lr3U8eG5nhNZZUH5+LSQkB9LTN94UVNW+PYXg37KH0mMLgw9nuoBHuW+Q=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 15:32:35 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 95ms (Views: 92.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 15:44:36 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 1287ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Undefined variable: "$gray-medium-light".):
+    4:     <title>TCircle</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/custom.css.scss:124
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___4216298657836489845_70195443545180'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.3ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (104.9ms)
+Started GET "/" for ::1 at 2017-03-17 15:45:10 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header.html.erb (2.8ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 2648ms (Views: 2643.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 15:46:06 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 2824ms (Views: 2821.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 15:46:38 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 113ms (Views: 109.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 15:48:37 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 83ms (Views: 80.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 15:51:40 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 2719ms (Views: 2717.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 15:55:14 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `full_title' for #<#<Class:0x007faf494aa2b8>:0x007faf4d2c8040>):
+    1: <!DOCTYPE html>
+    2: <html>
+    3:   <head>
+    4:   <title><%= full_title(yield(:title)) %></title>
+    5:     <title>TafariCircle</title>
+    6:     <%= csrf_meta_tags %>
+    7: 
+  
+app/views/layouts/application.html.erb:4:in `_app_views_layouts_application_html_erb___4216298657836489845_70195445356700'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.5ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (97.4ms)
+Started GET "/" for ::1 at 2017-03-17 15:55:26 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `full_title' for #<#<Class:0x007faf494aa2b8>:0x007faf41fd0c30>):
+    1: <!DOCTYPE html>
+    2: <html>
+    3:   <head>
+    4:   <!-- <title><%= full_title(yield(:title)) %></title> -->
+    5:     <title>TafariCircle</title>
+    6:     <%= csrf_meta_tags %>
+    7: 
+  
+app/views/layouts/application.html.erb:4:in `_app_views_layouts_application_html_erb___4216298657836489845_70195372725580'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.3ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (98.7ms)
+Started GET "/" for ::1 at 2017-03-17 15:55:39 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_header.html.erb (2.8ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 111ms (Views: 108.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 15:58:06 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.3ms)
+  Rendered layouts/_header.html.erb (2.8ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 2823ms (Views: 2819.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/interests" for ::1 at 2017-03-17 16:12:18 -0500
+Processing by InterestsController#index as HTML
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered interests/index.html.erb within layouts/application (40.9ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 129ms (Views: 124.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-03-17 16:12:37 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (48.4ms)
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 164ms (Views: 162.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-03-17 16:12:41 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kELP025kFydw0jMTlvkgf9/PKCIawKLS8yJohqpVFcdPW8GTNp/dw3A2SvD1t26we3yECzx2T4dXNuQrhPEz4w==", "user"=>{"email"=>"lily@pad.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lily@pad.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2017-03-17 21:12:41 UTC], ["last_sign_in_at", 2017-03-16 19:20:23 UTC], ["sign_in_count", 5], ["updated_at", 2017-03-17 21:12:41 UTC], ["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 240ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 16:12:41 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 76ms (Views: 72.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/interests/new" for ::1 at 2017-03-17 16:13:00 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (9.9ms)
+  Rendered interests/new.html.erb within layouts/application (12.2ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 109ms (Views: 101.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/interests/new" for ::1 at 2017-03-17 16:14:01 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (10.6ms)
+  Rendered interests/new.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 128ms (Views: 119.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/interests/new" for ::1 at 2017-03-17 16:15:18 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (8.1ms)
+  Rendered interests/new.html.erb within layouts/application (10.5ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 96ms (Views: 90.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/interests" for ::1 at 2017-03-17 16:17:12 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qMXMh0IaQ0vyNWLTRJhKcrb0X2V8VAcJDtB9DONnzFeGgdkERWPVVXBTCS+QxUNiEYrOSE4/mTA3RGBmal7KVw==", "interest"=>{"name"=>"", "description"=>"", "url"=>"", "board_id"=>"6"}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (9.3ms)
+  Rendered interests/new.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 97ms (Views: 88.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/lillyp" for ::1 at 2017-03-17 16:18:05 -0500
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/iNjaro/Sites/Rails_Apps/tCircle/app/controllers/application_controller.rb:3)
+Processing by UsersController#show as HTML
+  Parameters: {"username"=>"lillyp"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "lillyp"], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mInterest Load (0.6ms)[0m  [1m[34mSELECT "interests".* FROM "interests" WHERE "interests"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (52.7ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 177ms (Views: 128.8ms | ActiveRecord: 4.4ms)
+
+
+Started DELETE "/boards/3" for ::1 at 2017-03-17 16:18:19 -0500
+Processing by BoardsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8sUdzF2g4KPNb/+X6iahZZoelIvuVCrajhOTDWhJCffcgQhPWtl2vU8JlGs+e6h1PWAFptw/tOO3h45n4XAP9w==", "id"=>"3"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."user_id" = ? AND "boards"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "boards" WHERE "boards"."id" = ?[0m  [["id", 3]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/lillyp
+Completed 302 Found in 12ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/lillyp" for ::1 at 2017-03-17 16:18:19 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"username"=>"lillyp"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "lillyp"], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT "interests".* FROM "interests" WHERE "interests"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 99ms (Views: 95.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/boards/new" for ::1 at 2017-03-17 16:18:31 -0500
+Processing by BoardsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boards/new.html.erb within layouts/application
+  Rendered boards/_form.html.erb (3.1ms)
+  Rendered boards/new.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 84ms (Views: 78.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/boards" for ::1 at 2017-03-17 16:18:47 -0500
+Processing by BoardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePWWsEmbL22p4LU2WPJSM2QnpQInrZ7PaSombBusLx4B5rZ9X5XYZyLDDEDXPeStbaiKyVSq1QPKeDGkcQ9/qw==", "board"=>{"title"=>"time", "description"=>"hope this dont work"}, "commit"=>"Create Board"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."title" = ? LIMIT ?[0m  [["title", "time"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering boards/new.html.erb within layouts/application
+  Rendered boards/_form.html.erb (2.8ms)
+  Rendered boards/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 94ms (Views: 83.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/boards" for ::1 at 2017-03-17 16:19:42 -0500
+Processing by BoardsController#index as HTML
+  Rendering boards/index.html.erb within layouts/application
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 9]]
+  Rendered boards/index.html.erb within layouts/application (20.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.1ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 2705ms (Views: 2700.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/boards" for ::1 at 2017-03-17 16:19:55 -0500
+Processing by BoardsController#index as HTML
+  Rendering boards/index.html.erb within layouts/application
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 9]]
+  Rendered boards/index.html.erb within layouts/application (17.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 99ms (Views: 93.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/boards" for ::1 at 2017-03-17 16:20:09 -0500
+Processing by BoardsController#index as HTML
+  Rendering boards/index.html.erb within layouts/application
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 9]]
+  Rendered boards/index.html.erb within layouts/application (17.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.5ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 101ms (Views: 96.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/boards" for ::1 at 2017-03-17 16:20:24 -0500
+Processing by BoardsController#index as HTML
+  Rendering boards/index.html.erb within layouts/application
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 9]]
+  Rendered boards/index.html.erb within layouts/application (17.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (7.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 108ms (Views: 103.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/lillyp" for ::1 at 2017-03-17 16:21:44 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"username"=>"lillyp"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "lillyp"], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT "interests".* FROM "interests" WHERE "interests"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (14.9ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 101ms (Views: 96.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/interests" for ::1 at 2017-03-17 16:22:08 -0500
+Processing by InterestsController#index as HTML
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.7ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered interests/index.html.erb within layouts/application (39.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 128ms (Views: 123.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/boards/new" for ::1 at 2017-03-17 16:22:11 -0500
+Processing by BoardsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boards/new.html.erb within layouts/application
+  Rendered boards/_form.html.erb (2.9ms)
+  Rendered boards/new.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 99ms (Views: 93.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/interests/new" for ::1 at 2017-03-17 16:22:16 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (10.3ms)
+  Rendered interests/new.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 98ms (Views: 92.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/interests/" for ::1 at 2017-03-17 16:22:24 -0500
+Processing by InterestsController#index as HTML
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.4ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered interests/index.html.erb within layouts/application (35.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.4ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 114ms (Views: 109.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/boards/" for ::1 at 2017-03-17 16:22:32 -0500
+Processing by BoardsController#index as HTML
+  Rendering boards/index.html.erb within layouts/application
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 9]]
+  Rendered boards/index.html.erb within layouts/application (16.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.3ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 109ms (Views: 104.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/boards/" for ::1 at 2017-03-17 16:23:39 -0500
+Processing by BoardsController#index as HTML
+  Rendering boards/index.html.erb within layouts/application
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 9]]
+  Rendered boards/index.html.erb within layouts/application (21.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.0ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 125ms (Views: 118.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/boards/new" for ::1 at 2017-03-17 16:23:52 -0500
+Processing by BoardsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boards/new.html.erb within layouts/application
+  Rendered boards/_form.html.erb (3.8ms)
+  Rendered boards/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 93ms (Views: 87.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/boards/new" for ::1 at 2017-03-17 16:24:13 -0500
+Processing by BoardsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boards/new.html.erb within layouts/application
+  Rendered boards/_form.html.erb (3.9ms)
+  Rendered boards/new.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_header.html.erb (4.9ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 116ms (Views: 107.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/boards/new" for ::1 at 2017-03-17 16:25:02 -0500
+Processing by BoardsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boards/new.html.erb within layouts/application
+  Rendered boards/_form.html.erb (3.2ms)
+  Rendered boards/new.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_header.html.erb (4.9ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 2753ms (Views: 2747.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-17 16:25:13 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 89ms (Views: 86.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/lillyp" for ::1 at 2017-03-17 16:25:24 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"username"=>"lillyp"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "lillyp"], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT "interests".* FROM "interests" WHERE "interests"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 98ms (Views: 93.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/interests/10" for ::1 at 2017-03-17 16:25:33 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 10]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (31.7ms)
+  Rendered layouts/_header.html.erb (4.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 136ms (Views: 130.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/interests/10/edit" for ::1 at 2017-03-17 16:25:50 -0500
+Processing by InterestsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mInterest Load (0.5ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."user_id" = ? AND "interests"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 10], ["LIMIT", 1]]
+  Rendering interests/edit.html.erb within layouts/application
+  [1m[36mBoard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (9.5ms)
+  Rendered interests/edit.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 111ms (Views: 100.4ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/interests/10" for ::1 at 2017-03-17 16:26:55 -0500
+Processing by InterestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zewROQSxAXY/EsKn1KLsF71F13QPtbX4yqYGaiPOg8RGKfN9ZVm206mVgpbvAcqAAfnaq0qX4TalEZ2QQoOxbw==", "interest"=>{"name"=>"bye", "description"=>"Prep for ChiHack Night -Research requirements for ChiHack -Prepare for ChiHack Presentation  -Create Open Source Platform for   Web Developers and Quick MVP", "url"=>"", "board_id"=>"1"}, "commit"=>"Update Interest", "id"=>"10"}
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."user_id" = ? AND "interests"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 10], ["LIMIT", 1]]
+  Rendering interests/update.html.erb within layouts/application
+  Rendered interests/update.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 87ms (Views: 80.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/interests" for ::1 at 2017-03-17 16:27:02 -0500
+Processing by InterestsController#index as HTML
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered interests/index.html.erb within layouts/application (37.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.2ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 121ms (Views: 116.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/boards/new" for ::1 at 2017-03-17 16:27:45 -0500
+Processing by BoardsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boards/new.html.erb within layouts/application
+  Rendered boards/_form.html.erb (3.0ms)
+  Rendered boards/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 94ms (Views: 88.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/interests/new" for ::1 at 2017-03-17 16:27:49 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (8.1ms)
+  Rendered interests/new.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 97ms (Views: 90.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/interests" for ::1 at 2017-03-17 16:27:51 -0500
+Processing by InterestsController#index as HTML
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered interests/index.html.erb within layouts/application (31.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 117ms (Views: 112.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2017-03-21 22:24:30 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/iNjaro/Sites/Rails_Apps/tCircle/app/controllers/application_controller.rb:3)
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/iNjaro/Sites/Rails_Apps/tCircle/app/views/home/index.html.erb:10: syntax error, unexpected keyword_class, expecting ')'
+...'tcircle.png', size: "40" class: 'logo') );@output_buffer.sa...
+...                               ^
+/Users/iNjaro/Sites/Rails_Apps/tCircle/app/views/home/index.html.erb:10: syntax error, unexpected ')', expecting keyword_end
+...g', size: "40" class: 'logo') );@output_buffer.safe_append='
+...                               ^):
+  
+app/views/home/index.html.erb:10: syntax error, unexpected keyword_class, expecting ')'
+app/views/home/index.html.erb:10: syntax error, unexpected ')', expecting keyword_end
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (155.2ms)
+Started GET "/" for ::1 at 2017-03-21 22:24:46 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (509.7ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 704ms (Views: 701.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-21 22:24:59 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 90ms (Views: 87.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-21 22:25:36 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 98ms (Views: 95.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-21 22:26:05 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 97ms (Views: 92.4ms | ActiveRecord: 0.0ms)
+
+
