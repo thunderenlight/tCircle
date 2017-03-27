@@ -2,20 +2,31 @@
   <div class="row">
     <div class="jumbotron center background jumbotron-custom">
       <div class = "row">
-      <div class = "col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
-		<% if !user_signed_in? %>
-			<h1>TafariCircle</h1>
-			<p>Welcome to TafariCircle</p>
-	        <%= image_tag('tcircle.png', size: "100", class: 'logo') %><br>
-			<%= link_to("Sign up", new_user_registration_path) %> | <%= link_to("Login", new_user_session_path) %>
-	    <% else %>
-	    <h3>Welcome <%= current_user.username.capitalize %>!</h3>
-	   	<h5><%= link_to "See Your Profile", user_path(current_user.username) %><h5>
-        <% end %><hr>
+	      <div class = "col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
+			<% if !user_signed_in? %>
+				<h1>TafariCircle</h1>
+				<p>Welcome to TafariCircle</p>
+		        <%= image_tag('tcircle.png', size: "100", class: 'logo') %><br>
+				<%= link_to("Sign up", new_user_registration_path) %> | <%= link_to("Login", new_user_session_path) %>
+		    <% else %>
+		    <h3>Welcome <%= current_user.username.capitalize %>!</h3>
+		   	<h5><%= link_to "See Your Profile", user_path(current_user.username) %><h5>
+	        <% end %>
+			<div class="grid-item">
+				
+		        <h4> TafariCircle is the circle of inspiring people, where people connect and share, and build a library of experiences that they can pass down to future generations.</h4>
 
-        <h4> TafariCircle is the circle of inspiring people, where people connect and share, and build a library of experiences that they can pass down to future generations.</h4>
+		       <h5>
+		       	
 
-        <h3> </h3>
+
+
+
+
+
+
+		       </h5><br>
+			</div>
       </div>
       </div>
     </div>

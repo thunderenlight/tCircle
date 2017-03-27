@@ -15,7 +15,7 @@
     <% @interest.comments.each do |comment| %>
       <p><%= comment.body %></p>
       <p>
-        <strong><%= comment.user.username %></strong>
+        <strong>- <%= comment.user.username %></strong>
       </p>
 
       <hr>
@@ -27,10 +27,10 @@
       <%= form_for([@interest, @interest.comments.build]) do |f| %>
         <p>
           <%= f.label :comment %><br>
-          <%= f.text_area(:body, size: '50*50') %>
+          <%= f.text_area(:body, rows: 10) %>
         </p>
         <p>
-          <%= f.submit %>
+          <%= f.submit class: 'btn btn-info btn-sm' %>
         </p>
       <% end %>
     <% end %>
