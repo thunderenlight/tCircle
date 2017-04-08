@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'paperclip', '~> 5.0.0'
 gem 'masonry-rails'
 gem 'imagesLoaded_rails', '~> 4.1'
+gem 'passenger', '>= 5.0.25', require: 'phusion_passenger/rack_handler'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
