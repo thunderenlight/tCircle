@@ -205,7 +205,7 @@ DEPENDENCIES
   masonry-rails
   paperclip (~> 5.0.0)
   passenger (>= 5.0.25)
-  pg (= 0.17.1)
+  pg
   puma (~> 3.0)
   rails (~> 5.0.2)
   rails_12factor (= 0.0.2)
