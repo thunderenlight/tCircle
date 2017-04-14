@@ -86,6 +86,7 @@ App 59473 stdout:
 [ 2017-04-12 16:26:41.6982 58755/0x7fff77858300 age/Cor/CoreMain.cpp:907 ]: Checking whether to disconnect long-running connections for process 58811, application /Users/iNjaro/Sites/Rails_Apps/tCircle/public (development)
 [ 2017-04-12 16:26:41.6984 58757/0x7fff77858300 age/Ust/UstRouterMain.cpp:523 ]: Passenger UstRouter shutdown finished
 [ 2017-04-12 16:26:42.0789 58755/0x7fff77858300 age/Cor/CoreMain.cpp:1055 ]: Passenger core shutdown finished
+<<<<<<< HEAD
 [ 2017-04-12 20:13:38.1236 62493/0x7fff77858300 age/Wat/WatchdogMain.cpp:1281 ]: Starting Passenger watchdog...
 [ 2017-04-12 20:13:38.2893 62497/0x7fff77858300 age/Cor/CoreMain.cpp:1070 ]: Starting Passenger core...
 [ 2017-04-12 20:13:38.2998 62497/0x7fff77858300 age/Cor/CoreMain.cpp:245 ]: Passenger core running in multi-application mode.
@@ -192,3 +193,75 @@ App 76756 stdout:
 [ 2017-04-13 12:57:13.7160 76636/0x7fff77858300 age/Cor/CoreMain.cpp:907 ]: Checking whether to disconnect long-running connections for process 76694, application /Users/iNjaro/Sites/Rails_Apps/tCircle/public (development)
 [ 2017-04-13 12:57:13.7163 76638/0x7fff77858300 age/Ust/UstRouterMain.cpp:523 ]: Passenger UstRouter shutdown finished
 [ 2017-04-13 12:57:14.0999 76636/0x7fff77858300 age/Cor/CoreMain.cpp:1055 ]: Passenger core shutdown finished
+
+13 16:53:31.4490 83198/0x7fff77858300 age/Wat/WatchdogMain.cpp:1281 ]: Starting Passenger watchdog...
+[ 2017-04-13 16:53:31.5361 83200/0x7fff77858300 age/Cor/CoreMain.cpp:1070 ]: Starting Passenger core...
+[ 2017-04-13 16:53:31.5380 83200/0x7fff77858300 age/Cor/CoreMain.cpp:245 ]: Passenger core running in multi-application mode.
+[ 2017-04-13 16:53:31.6632 83200/0x7fff77858300 age/Cor/CoreMain.cpp:820 ]: Passenger core online, PID 83200
+[ 2017-04-13 16:53:31.6761 83202/0x7fff77858300 age/Ust/UstRouterMain.cpp:529 ]: Starting Passenger UstRouter...
+[ 2017-04-13 16:53:31.7111 83202/0x7fff77858300 age/Ust/UstRouterMain.cpp:342 ]: Passenger UstRouter online, PID 83202
+App 83216 stdout: 
+[ 2017-04-13 16:53:34.9457 83200/0x10a0f2000 age/Cor/SecurityUpdateChecker.h:464 ]: Security update check: no update found (next check in 24 hours)
+App 83260 stdout: 
+App 83363 stdout: 
+App 83364 stdout: 
+App 83367 stdout: 
+[ 2017-04-13 17:00:22.8775 83200/0x109f47000 age/Cor/CoreMain.cpp:907 ]: Checking whether to disconnect long-running connections for process 83363, application /Users/iNjaro/Sites/Rails_Apps/tCircle/public (development)
+[ 2017-04-13 17:00:23.0437 83200/0x109f47000 age/Cor/CoreMain.cpp:907 ]: Checking whether to disconnect long-running connections for process 83364, application /Users/iNjaro/Sites/Rails_Apps/tCircle/public (development)
+[ 2017-04-13 17:00:23.4412 83200/0x109f47000 age/Cor/CoreMain.cpp:907 ]: Checking whether to disconnect long-running connections for process 83367, application /Users/iNjaro/Sites/Rails_Apps/tCircle/public (development)
+
+[ 2017-04-13 17:51:48.8492 83200/0x10a1f8000 age/Cor/CoreMain.cpp:585 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ 2017-04-13 17:51:48.8492 83200/0x7fff77858300 age/Cor/CoreMain.cpp:989 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ 2017-04-13 17:51:48.8493 83200/0x7fff77858300 age/Cor/CoreMain.cpp:907 ]: Checking whether to disconnect long-running connections for process 83260, application /Users/iNjaro/Sites/Rails_Apps/tCircle/public (development)
+[ 2017-04-13 17:51:48.8495 83200/0x10a1f8000 Ser/Server.h:816 ]: [ServerThr.1] Freed 128 spare client objects
+
+[ 2017-04-13 17:51:48.8496 83200/0x10a1f8000 Ser/Server.h:464 ]: [ServerThr.1] Shutdown finished
+[ 2017-04-13 17:51:48.8496 83202/0x10e903000 age/Ust/UstRouterMain.cpp:422 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ 2017-04-13 17:51:48.8497 83202/0x7fff77858300 age/Ust/UstRouterMain.cpp:492 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ 2017-04-13 17:51:48.8498 83202/0x10e903000 Ser/Server.h:464 ]: [UstRouter] Shutdown finished
+[ 2017-04-13 17:51:48.8498 83200/0x10a2fe000 Ser/Server.h:816 ]: [ServerThr.2] Freed 128 spare client objects
+[ 2017-04-13 17:51:48.8498 83202/0x10ea09000 Ser/Server.h:816 ]: [UstRouterApiServer] Freed 0 spare client objects
+[ 2017-04-13 17:51:48.8498 83202/0x10ea09000 Ser/Server.h:464 ]: [UstRouterApiServer] Shutdown finished
+[ 2017-04-13 17:51:48.8498 83200/0x10a2fe000 Ser/Server.h:464 ]: [ServerThr.2] Shutdown finished
+[ 2017-04-13 17:51:48.8500 83200/0x10a404000 Ser/Server.h:816 ]: [ServerThr.3] Freed 128 spare client objects
+[ 2017-04-13 17:51:48.8501 83200/0x10a404000 Ser/Server.h:464 ]: [ServerThr.3] Shutdown finished
+[ 2017-04-13 17:51:48.8502 83200/0x10a50a000 Ser/Server.h:816 ]: [ServerThr.4] Freed 128 spare client objects
+[ 2017-04-13 17:51:48.8502 83200/0x10a50a000 Ser/Server.h:464 ]: [ServerThr.4] Shutdown finished
+[ 2017-04-13 17:51:48.8504 83200/0x10a610000 Ser/Server.h:816 ]: [ApiServer] Freed 0 spare client objects
+[ 2017-04-13 17:51:48.8504 83200/0x10a610000 Ser/Server.h:464 ]: [ApiServer] Shutdown finished
+[ 2017-04-13 17:51:48.8505 83200/0x7fff77858300 age/Cor/CoreMain.cpp:907 ]: Checking whether to disconnect long-running connections for process 83260, application /Users/iNjaro/Sites/Rails_Apps/tCircle/public (development)
+[ 2017-04-13 17:51:48.8513 83202/0x7fff77858300 age/Ust/UstRouterMain.cpp:523 ]: Passenger UstRouter shutdown finished
+[ 2017-04-13 17:51:49.2279 83200/0x7fff77858300 age/Cor/CoreMain.cpp:1055 ]: Passenger core shutdown finished
+[ 2017-04-14 12:11:57.7974 97120/0x7fff77858300 age/Wat/WatchdogMain.cpp:1281 ]: Starting Passenger watchdog...
+[ 2017-04-14 12:11:57.8782 97122/0x7fff77858300 age/Cor/CoreMain.cpp:1070 ]: Starting Passenger core...
+[ 2017-04-14 12:11:57.9110 97122/0x7fff77858300 age/Cor/CoreMain.cpp:245 ]: Passenger core running in multi-application mode.
+[ 2017-04-14 12:11:58.0382 97122/0x7fff77858300 age/Cor/CoreMain.cpp:820 ]: Passenger core online, PID 97122
+[ 2017-04-14 12:11:58.0525 97124/0x7fff77858300 age/Ust/UstRouterMain.cpp:529 ]: Starting Passenger UstRouter...
+[ 2017-04-14 12:11:58.0869 97124/0x7fff77858300 age/Ust/UstRouterMain.cpp:342 ]: Passenger UstRouter online, PID 97124
+App 97137 stdout: 
+[ 2017-04-14 12:12:01.2878 97122/0x107ef8000 age/Cor/SecurityUpdateChecker.h:464 ]: Security update check: no update found (next check in 24 hours)
+App 97179 stdout: 
+
+[ 2017-04-14 12:16:25.5638 97122/0x107ffe000 age/Cor/CoreMain.cpp:585 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+
+[ 2017-04-14 12:16:25.5642 97122/0x7fff77858300 age/Cor/CoreMain.cpp:989 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ 2017-04-14 12:16:25.5642 97124/0x1095dd000 age/Ust/UstRouterMain.cpp:422 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ 2017-04-14 12:16:25.5643 97124/0x7fff77858300 age/Ust/UstRouterMain.cpp:492 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ 2017-04-14 12:16:25.5643 97122/0x7fff77858300 age/Cor/CoreMain.cpp:907 ]: Checking whether to disconnect long-running connections for process 97179, application /Users/iNjaro/Sites/Rails_Apps/tCircle/public (development)
+[ 2017-04-14 12:16:25.5643 97124/0x1095dd000 Ser/Server.h:464 ]: [UstRouter] Shutdown finished
+[ 2017-04-14 12:16:25.5644 97124/0x1096e3000 Ser/Server.h:816 ]: [UstRouterApiServer] Freed 0 spare client objects
+[ 2017-04-14 12:16:25.5644 97124/0x1096e3000 Ser/Server.h:464 ]: [UstRouterApiServer] Shutdown finished
+[ 2017-04-14 12:16:25.5645 97122/0x107ffe000 Ser/Server.h:816 ]: [ServerThr.1] Freed 128 spare client objects
+[ 2017-04-14 12:16:25.5646 97122/0x107ffe000 Ser/Server.h:464 ]: [ServerThr.1] Shutdown finished
+[ 2017-04-14 12:16:25.5649 97122/0x108104000 Ser/Server.h:816 ]: [ServerThr.2] Freed 128 spare client objects
+[ 2017-04-14 12:16:25.5649 97122/0x108104000 Ser/Server.h:464 ]: [ServerThr.2] Shutdown finished
+[ 2017-04-14 12:16:25.5651 97122/0x10820a000 Ser/Server.h:816 ]: [ServerThr.3] Freed 128 spare client objects
+[ 2017-04-14 12:16:25.5651 97122/0x10820a000 Ser/Server.h:464 ]: [ServerThr.3] Shutdown finished
+[ 2017-04-14 12:16:25.5652 97122/0x108310000 Ser/Server.h:816 ]: [ServerThr.4] Freed 128 spare client objects
+[ 2017-04-14 12:16:25.5653 97122/0x108310000 Ser/Server.h:464 ]: [ServerThr.4] Shutdown finished
+[ 2017-04-14 12:16:25.5655 97122/0x108416000 Ser/Server.h:816 ]: [ApiServer] Freed 0 spare client objects
+[ 2017-04-14 12:16:25.5655 97122/0x108416000 Ser/Server.h:464 ]: [ApiServer] Shutdown finished
+[ 2017-04-14 12:16:25.5657 97122/0x7fff77858300 age/Cor/CoreMain.cpp:907 ]: Checking whether to disconnect long-running connections for process 97179, application /Users/iNjaro/Sites/Rails_Apps/tCircle/public (development)
+[ 2017-04-14 12:16:25.5658 97124/0x7fff77858300 age/Ust/UstRouterMain.cpp:523 ]: Passenger UstRouter shutdown finished
+[ 2017-04-14 12:16:26.0539 97122/0x7fff77858300 age/Cor/CoreMain.cpp:1055 ]: Passenger core shutdown finished
+

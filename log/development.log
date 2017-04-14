@@ -17351,7 +17351,11 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 125ms (Views: 119.4ms | ActiveRecord: 1.4ms)
 
 
+<<<<<<< HEAD
 Started HEAD "/" for 127.0.0.1 at 2017-04-12 20:13:46 -0500
+=======
+Started HEAD "/" for 127.0.0.1 at 2017-04-13 16:53:38 -0500
+>>>>>>> s3
   [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   
 ActiveRecord::PendingMigrationError (
@@ -17399,6 +17403,7 @@ passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler.rb:416:i
 passenger (5.1.2) src/ruby_supportlib/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
   Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
   Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+<<<<<<< HEAD
   Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.6ms)
   Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
   Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
@@ -17407,6 +17412,16 @@ passenger (5.1.2) src/ruby_supportlib/phusion_passenger/utils.rb:113:in `block i
   Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (171.9ms)
 Started GET "/" for 127.0.0.1 at 2017-04-12 20:14:09 -0500
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+=======
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (172.5ms)
+Started GET "/" for 127.0.0.1 at 2017-04-13 16:53:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+>>>>>>> s3
   
 ActiveRecord::PendingMigrationError (
 
@@ -17453,6 +17468,7 @@ passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler.rb:416:i
 passenger (5.1.2) src/ruby_supportlib/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
   Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
   Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+<<<<<<< HEAD
   Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
   Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
   Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
@@ -17690,6 +17706,32 @@ Processing by InterestsController#index as HTML
   [1m[36mInterest Load (0.4ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
   [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+=======
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (97.6ms)
+Started GET "/" for 127.0.0.1 at 2017-04-13 16:55:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/iNjaro/Sites/Rails_Apps/tCircle/app/controllers/application_controller.rb:3)
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (16.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (48.5ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 2061ms (Views: 1975.7ms | ActiveRecord: 17.8ms)
+
+
+Started GET "/interests" for 127.0.0.1 at 2017-04-13 16:56:11 -0500
+Processing by InterestsController#index as HTML
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (15.3ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+>>>>>>> s3
   [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
@@ -17703,6 +17745,7 @@ Processing by InterestsController#index as HTML
   [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
   [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
   [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+<<<<<<< HEAD
   [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
   Rendered interests/index.html.erb within layouts/application (53.6ms)
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
@@ -18012,5 +18055,67 @@ Processing by InterestsController#index as HTML
   Rendered layouts/_header.html.erb (9.7ms)
   Rendered layouts/_footer.html.erb (1.4ms)
 Completed 200 OK in 283ms (Views: 245.0ms | ActiveRecord: 2.3ms)
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered interests/index.html.erb within layouts/application (157.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.5ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 317ms (Views: 252.4ms | ActiveRecord: 18.5ms)
+
+
+Started GET "/lillyp" for 127.0.0.1 at 2017-04-13 16:56:31 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"username"=>"lillyp"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "lillyp"], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mInterest Load (0.5ms)[0m  [1m[34mSELECT "interests".* FROM "interests" WHERE "interests"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (98.3ms)
+  Rendered layouts/_header.html.erb (4.8ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 282ms (Views: 227.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/boards/1" for 127.0.0.1 at 2017-04-13 16:57:00 -0500
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boards/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mInterest Load (0.6ms)[0m  [1m[34mSELECT "interests".* FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered boards/show.html.erb within layouts/application (34.6ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 179ms (Views: 164.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/interests/11" for 127.0.0.1 at 2017-04-13 16:57:08 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (279.1ms)
+  Rendered layouts/_header.html.erb (4.1ms)
+  Rendered layouts/_footer.html.erb (1.7ms)
+Completed 200 OK in 412ms (Views: 366.6ms | ActiveRecord: 1.8ms)
+
+
+Started HEAD "/" for 127.0.0.1 at 2017-04-14 12:12:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/iNjaro/Sites/Rails_Apps/tCircle/app/controllers/application_controller.rb:3)
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1007.8ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 2838ms (Views: 2771.1ms | ActiveRecord: 0.0ms)
 
 

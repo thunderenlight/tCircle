@@ -31,6 +31,7 @@ gem 'paperclip', '~> 5.0.0'
 gem 'masonry-rails'
 gem 'imagesLoaded_rails', '~> 4.1'
 gem 'passenger', '>= 5.0.25', require: 'phusion_passenger/rack_handler'
+gem 'aws-sdk', '~> 2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -54,8 +55,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 group :production do
-gem 'pg', '~> 0.18.4'
-gem 'rails_12factor'
+  gem 'pg', '~> 0.18.4'
+  gem 'rails_12factor'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
