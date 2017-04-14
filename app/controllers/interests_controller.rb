@@ -17,10 +17,24 @@ class InterestsController < ApplicationController
     @interests = Interest.all
   end
 
-  def destroy
+  def 
+     @interest.destroy
+     respond_to do |format|
+      format.html { redirect_to user_path(current_user.username), notice: 'interest was successfully deleted.' }
+      format.json { head :no_content }
+    end
   end
 
   def update
+     respond_to do |format|
+      if @interest.update(interest_params)
+        format.html { redirect_to user_path(current_user.username), notice: 'interest was successfully updated.' }
+        format.json { render :show, status: :ok, location: @interest }
+      else
+        format.html { render :edit }
+        format.json { render json: @interest.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def create
