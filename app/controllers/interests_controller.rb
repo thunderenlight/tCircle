@@ -17,7 +17,7 @@ class InterestsController < ApplicationController
     @interests = Interest.all
   end
 
-  def 
+  def destroy
      @interest.destroy
      respond_to do |format|
       format.html { redirect_to user_path(current_user.username), notice: 'interest was successfully deleted.' }
