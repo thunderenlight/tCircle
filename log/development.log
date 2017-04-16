@@ -18119,3 +18119,1155 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 2838ms (Views: 2771.1ms | ActiveRecord: 0.0ms)
 
 
+Started HEAD "/" for 127.0.0.1 at 2017-04-16 12:46:50 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/iNjaro/Sites/Rails_Apps/tCircle/app/controllers/application_controller.rb:3)
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (975.6ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 2492ms (Views: 2426.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-16 12:47:20 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (33.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (61.0ms)
+  Rendered layouts/_header.html.erb (4.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 172ms (Views: 133.9ms | ActiveRecord: 34.5ms)
+
+
+Started GET "/interests/new" for 127.0.0.1 at 2017-04-16 12:47:29 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (268.9ms)
+  Rendered interests/new.html.erb within layouts/application (286.9ms)
+  Rendered layouts/_header.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 535ms (Views: 384.3ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/interests" for 127.0.0.1 at 2017-04-16 12:49:07 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DI3NQbh1aNBC16zeavhRudKsKAjqymoaql+Le8Y71Vqbwhek/B9jUiprFebj8uplKM44bWo8BH/aITpi265+Vw==", "interest"=>{"name"=>"flexibility", "description"=>"form practice", "url"=>"http://web.archive.org/web/20130903005134/http://codeglot.com/posts/68-upoading_pictures_to_rails_apps_on_heroku", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff1223d3748 @tempfile=#<Tempfile:/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/RackMultipart20170416-7442-1bj26d3.jpeg>, @original_filename="feet.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"interest[image]\"; filename=\"feet.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "board_id"=>"10"}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1yzkr2q.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-aehmje.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-aehmje.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-aehmje.jpeg[0]' -auto-orient -resize "300x300>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e51add87179982f5751e53eafdcab8bd20170416-7442-1qdkmv5'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-aehmje.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-aehmje.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-aehmje.jpeg[0]' -auto-orient -resize "100x100>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e51add87179982f5751e53eafdcab8bd20170416-7442-13nk6yx'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1739a8j.jpeg'
+  [1m[35mSQL (34.2ms)[0m  [1m[32mINSERT INTO "interests" ("name", "description", "user_id", "board_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "flexibility"], ["description", "form practice"], ["user_id", 1], ["board_id", 10], ["created_at", 2017-04-16 17:49:08 UTC], ["updated_at", 2017-04-16 17:49:08 UTC], ["image_file_name", "feet.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 18812], ["image_updated_at", 2017-04-16 17:49:07 UTC], ["url", "http://web.archive.org/web/20130903005134/http://codeglot.com/posts/68-upoading_pictures_to_rails_apps_on_heroku"]]
+[paperclip] saving /interests/images/000/000/017/original/feet.jpeg
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 3784ms (ActiveRecord: 35.6ms)
+
+
+  
+Seahorse::Client::NetworkingError (unable to connect to `s3.AWS_REGION.amazonaws.com`; SocketError: getaddrinfo: nodename nor servname provided, or not known):
+  
+app/controllers/interests_controller.rb:43:in `block in create'
+app/controllers/interests_controller.rb:42:in `create'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (154.3ms)
+Started POST "/interests" for 127.0.0.1 at 2017-04-16 12:51:47 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DI3NQbh1aNBC16zeavhRudKsKAjqymoaql+Le8Y71Vqbwhek/B9jUiprFebj8uplKM44bWo8BH/aITpi265+Vw==", "interest"=>{"name"=>"flexibility", "description"=>"form practice", "url"=>"http://web.archive.org/web/20130903005134/http://codeglot.com/posts/68-upoading_pictures_to_rails_apps_on_heroku", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff12b1cea48 @tempfile=#<Tempfile:/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/RackMultipart20170416-7442-1lxqotm.jpeg>, @original_filename="feet.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"interest[image]\"; filename=\"feet.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "board_id"=>"10"}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-y6pako.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-60v7uf.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-60v7uf.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-60v7uf.jpeg[0]' -auto-orient -resize "300x300>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/1d16198cb8b4dee36b5ddca647324fa220170416-7442-17qmxaw'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-60v7uf.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-60v7uf.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-60v7uf.jpeg[0]' -auto-orient -resize "100x100>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/1d16198cb8b4dee36b5ddca647324fa220170416-7442-1poif9h'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1nva9gl.jpeg'
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "interests" ("name", "description", "user_id", "board_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "flexibility"], ["description", "form practice"], ["user_id", 1], ["board_id", 10], ["created_at", 2017-04-16 17:51:47 UTC], ["updated_at", 2017-04-16 17:51:47 UTC], ["image_file_name", "feet.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 18812], ["image_updated_at", 2017-04-16 17:51:47 UTC], ["url", "http://web.archive.org/web/20130903005134/http://codeglot.com/posts/68-upoading_pictures_to_rails_apps_on_heroku"]]
+[paperclip] saving /interests/images/000/000/017/original/feet.jpeg
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 2392ms (ActiveRecord: 2.4ms)
+
+
+  
+Seahorse::Client::NetworkingError (unable to connect to `s3.AWS_REGION.amazonaws.com`; SocketError: getaddrinfo: nodename nor servname provided, or not known):
+  
+app/controllers/interests_controller.rb:43:in `block in create'
+app/controllers/interests_controller.rb:42:in `create'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (19.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (132.1ms)
+Started POST "/interests" for 127.0.0.1 at 2017-04-16 12:52:40 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DI3NQbh1aNBC16zeavhRudKsKAjqymoaql+Le8Y71Vqbwhek/B9jUiprFebj8uplKM44bWo8BH/aITpi265+Vw==", "interest"=>{"name"=>"flexibility", "description"=>"form practice", "url"=>"http://web.archive.org/web/20130903005134/http://codeglot.com/posts/68-upoading_pictures_to_rails_apps_on_heroku", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff12b679ef8 @tempfile=#<Tempfile:/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/RackMultipart20170416-7442-15f21u9.jpeg>, @original_filename="feet.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"interest[image]\"; filename=\"feet.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "board_id"=>"10"}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1brwcfn.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1272k3a.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1272k3a.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1272k3a.jpeg[0]' -auto-orient -resize "300x300>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/d8a735b429d9292248bb880bc6d9f30c20170416-7442-k4p7o5'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1272k3a.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1272k3a.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1272k3a.jpeg[0]' -auto-orient -resize "100x100>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/d8a735b429d9292248bb880bc6d9f30c20170416-7442-12hltjx'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-19y6in1.jpeg'
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "interests" ("name", "description", "user_id", "board_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "flexibility"], ["description", "form practice"], ["user_id", 1], ["board_id", 10], ["created_at", 2017-04-16 17:52:41 UTC], ["updated_at", 2017-04-16 17:52:41 UTC], ["image_file_name", "feet.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 18812], ["image_updated_at", 2017-04-16 17:52:40 UTC], ["url", "http://web.archive.org/web/20130903005134/http://codeglot.com/posts/68-upoading_pictures_to_rails_apps_on_heroku"]]
+[paperclip] saving /interests/images/000/000/017/original/feet.jpeg
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 2347ms (ActiveRecord: 2.1ms)
+
+
+  
+Seahorse::Client::NetworkingError (unable to connect to `s3.AWS_REGION.amazonaws.com`; SocketError: getaddrinfo: nodename nor servname provided, or not known):
+  
+app/controllers/interests_controller.rb:43:in `block in create'
+app/controllers/interests_controller.rb:42:in `create'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.2ms)
+Started GET "/interests/new" for 127.0.0.1 at 2017-04-16 12:52:49 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (10.4ms)
+  Rendered interests/new.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_header.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 122ms (Views: 113.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/interests" for 127.0.0.1 at 2017-04-16 12:53:13 -0500
+Processing by InterestsController#index as HTML
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (10.7ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered interests/index.html.erb within layouts/application (72.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.1ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 183ms (Views: 154.0ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/interests/4" for 127.0.0.1 at 2017-04-16 12:53:26 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 4]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (73.6ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 244ms (Views: 166.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/interests/new" for 127.0.0.1 at 2017-04-16 12:53:36 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (8.7ms)
+  Rendered interests/new.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 108ms (Views: 100.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/interests" for 127.0.0.1 at 2017-04-16 12:54:18 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gqe5wn8CvFytiC7QD9Evjzr+AhWFHIECNmeFrTIuXZeN6GMnO2i33sU0l+iG25RTwJwScAXq72dGGTS0L7v2mg==", "interest"=>{"name"=>"ballet", "description"=>"form practice", "url"=>"http://docs.aws.amazon.com/general/latest/gr/rande.html#opsworks_region", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff12b267888 @tempfile=#<Tempfile:/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/RackMultipart20170416-7442-bd71xv.jpeg>, @original_filename="feet.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"interest[image]\"; filename=\"feet.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "board_id"=>"10"}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-13t6t4w.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-5df3j6.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-5df3j6.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-5df3j6.jpeg[0]' -auto-orient -resize "300x300>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/2c5d2c50486b1c1cfe8f8761ed17f1b320170416-7442-1g817b3'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-5df3j6.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-5df3j6.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-5df3j6.jpeg[0]' -auto-orient -resize "100x100>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/2c5d2c50486b1c1cfe8f8761ed17f1b320170416-7442-1bfefg4'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-yi4xp7.jpeg'
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "interests" ("name", "description", "user_id", "board_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "ballet"], ["description", "form practice"], ["user_id", 1], ["board_id", 10], ["created_at", 2017-04-16 17:54:18 UTC], ["updated_at", 2017-04-16 17:54:18 UTC], ["image_file_name", "feet.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 18812], ["image_updated_at", 2017-04-16 17:54:18 UTC], ["url", "http://docs.aws.amazon.com/general/latest/gr/rande.html#opsworks_region"]]
+[paperclip] saving /interests/images/000/000/017/original/feet.jpeg
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 2357ms (ActiveRecord: 1.9ms)
+
+
+  
+Seahorse::Client::NetworkingError (unable to connect to `s3.AWS_REGION.amazonaws.com`; SocketError: getaddrinfo: nodename nor servname provided, or not known):
+  
+app/controllers/interests_controller.rb:43:in `block in create'
+app/controllers/interests_controller.rb:42:in `create'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (28.3ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (118.9ms)
+Started POST "/interests" for 127.0.0.1 at 2017-04-16 12:54:37 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gqe5wn8CvFytiC7QD9Evjzr+AhWFHIECNmeFrTIuXZeN6GMnO2i33sU0l+iG25RTwJwScAXq72dGGTS0L7v2mg==", "interest"=>{"name"=>"ballet", "description"=>"form practice", "url"=>"http://docs.aws.amazon.com/general/latest/gr/rande.html#opsworks_region", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff129ad1890 @tempfile=#<Tempfile:/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/RackMultipart20170416-7442-17rbpfw.jpeg>, @original_filename="feet.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"interest[image]\"; filename=\"feet.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "board_id"=>"10"}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1mlv8wr.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-16qd56d.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-16qd56d.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-16qd56d.jpeg[0]' -auto-orient -resize "300x300>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/bf323e6ee20d1674ae2f8fb78ab7001820170416-7442-lkxl2f'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-16qd56d.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-16qd56d.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-16qd56d.jpeg[0]' -auto-orient -resize "100x100>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/bf323e6ee20d1674ae2f8fb78ab7001820170416-7442-1xnu33'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1ch6kba.jpeg'
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "interests" ("name", "description", "user_id", "board_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "ballet"], ["description", "form practice"], ["user_id", 1], ["board_id", 10], ["created_at", 2017-04-16 17:54:38 UTC], ["updated_at", 2017-04-16 17:54:38 UTC], ["image_file_name", "feet.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 18812], ["image_updated_at", 2017-04-16 17:54:37 UTC], ["url", "http://docs.aws.amazon.com/general/latest/gr/rande.html#opsworks_region"]]
+[paperclip] saving /interests/images/000/000/017/original/feet.jpeg
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 2338ms (ActiveRecord: 2.6ms)
+
+
+  
+Seahorse::Client::NetworkingError (unable to connect to `s3.AWS_REGION.amazonaws.com`; SocketError: getaddrinfo: nodename nor servname provided, or not known):
+  
+app/controllers/interests_controller.rb:43:in `block in create'
+app/controllers/interests_controller.rb:42:in `create'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.5ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.4ms)
+Started GET "/interests/new" for 127.0.0.1 at 2017-04-16 12:59:30 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (9.1ms)
+  Rendered interests/new.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_header.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 109ms (Views: 102.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/interests" for 127.0.0.1 at 2017-04-16 12:59:59 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3iV+bCI2arNhQzcERfHsWe6zS9fTJKOE835fNLBN+mATw286PnqNv+XLVX08HQS/MjfbFRympy5DALojSC4e+w==", "interest"=>{"name"=>"flexibility", "description"=>"form practice", "url"=>"http://colorzilla.com/gradient-editor/#7488e0+0,8994d3+31,060ca8+100", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff1295bb0b8 @tempfile=#<Tempfile:/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/RackMultipart20170416-7442-x4p2i7.jpeg>, @original_filename="feet.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"interest[image]\"; filename=\"feet.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "board_id"=>"10"}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-cc5pt6.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-pkmm8d.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-pkmm8d.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-pkmm8d.jpeg[0]' -auto-orient -resize "300x300>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/81e67b70384af29ee4f430623eb7f42d20170416-7442-10kxhki'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-pkmm8d.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-pkmm8d.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-pkmm8d.jpeg[0]' -auto-orient -resize "100x100>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/81e67b70384af29ee4f430623eb7f42d20170416-7442-f3d7ox'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-168bu4i.jpeg'
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "interests" ("name", "description", "user_id", "board_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "flexibility"], ["description", "form practice"], ["user_id", 1], ["board_id", 10], ["created_at", 2017-04-16 17:59:59 UTC], ["updated_at", 2017-04-16 17:59:59 UTC], ["image_file_name", "feet.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 18812], ["image_updated_at", 2017-04-16 17:59:59 UTC], ["url", "http://colorzilla.com/gradient-editor/#7488e0+0,8994d3+31,060ca8+100"]]
+[paperclip] saving /interests/images/000/000/017/original/feet.jpeg
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 2340ms (ActiveRecord: 1.9ms)
+
+
+  
+Seahorse::Client::NetworkingError (unable to connect to `s3.AWS_REGION.amazonaws.com`; SocketError: getaddrinfo: nodename nor servname provided, or not known):
+  
+app/controllers/interests_controller.rb:43:in `block in create'
+app/controllers/interests_controller.rb:42:in `create'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.4ms)
+Started POST "/interests" for 127.0.0.1 at 2017-04-16 13:17:59 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3iV+bCI2arNhQzcERfHsWe6zS9fTJKOE835fNLBN+mATw286PnqNv+XLVX08HQS/MjfbFRympy5DALojSC4e+w==", "interest"=>{"name"=>"flexibility", "description"=>"form practice", "url"=>"http://colorzilla.com/gradient-editor/#7488e0+0,8994d3+31,060ca8+100", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff12b5f0590 @tempfile=#<Tempfile:/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/RackMultipart20170416-7442-2co8jg.jpeg>, @original_filename="feet.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"interest[image]\"; filename=\"feet.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "board_id"=>"10"}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-10wptzv.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1ggxhns.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1ggxhns.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1ggxhns.jpeg[0]' -auto-orient -resize "300x300>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/94691674031f62c2eefc23cf45fc910420170416-7442-pfraix'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1ggxhns.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1ggxhns.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1ggxhns.jpeg[0]' -auto-orient -resize "100x100>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/94691674031f62c2eefc23cf45fc910420170416-7442-guh9d0'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-1e8hhiu.jpeg'
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "interests" ("name", "description", "user_id", "board_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "flexibility"], ["description", "form practice"], ["user_id", 1], ["board_id", 10], ["created_at", 2017-04-16 18:17:59 UTC], ["updated_at", 2017-04-16 18:17:59 UTC], ["image_file_name", "feet.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 18812], ["image_updated_at", 2017-04-16 18:17:59 UTC], ["url", "http://colorzilla.com/gradient-editor/#7488e0+0,8994d3+31,060ca8+100"]]
+[paperclip] saving /interests/images/000/000/017/original/feet.jpeg
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 2363ms (ActiveRecord: 2.4ms)
+
+
+  
+Seahorse::Client::NetworkingError (unable to connect to `s3.AWS_REGION.amazonaws.com`; SocketError: getaddrinfo: nodename nor servname provided, or not known):
+  
+app/controllers/interests_controller.rb:43:in `block in create'
+app/controllers/interests_controller.rb:42:in `create'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (112.9ms)
+Started GET "/interests/new" for 127.0.0.1 at 2017-04-16 13:18:16 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (9.8ms)
+  Rendered interests/new.html.erb within layouts/application (12.2ms)
+  Rendered layouts/_header.html.erb (3.7ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 115ms (Views: 108.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/interests/new" for 127.0.0.1 at 2017-04-16 13:18:22 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (8.1ms)
+  Rendered interests/new.html.erb within layouts/application (10.3ms)
+  Rendered layouts/_header.html.erb (5.4ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 113ms (Views: 107.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/interests/new" for 127.0.0.1 at 2017-04-16 13:18:51 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (10.3ms)
+  Rendered interests/new.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 115ms (Views: 108.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/interests/new" for 127.0.0.1 at 2017-04-16 13:19:03 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (9.3ms)
+  Rendered interests/new.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_header.html.erb (4.4ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 112ms (Views: 105.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/interests" for 127.0.0.1 at 2017-04-16 13:19:37 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A/Ho8GJCnNioPmRbXQw9FGRNPMQedAqPGwPF5T/s1PKUvjIVJiiXWsCC3WPUBobIni8soZ6CZOprfXT8Inl//w==", "interest"=>{"name"=>"flexibility", "description"=>"form practice", "url"=>"http://colorzilla.com/gradient-editor/#7488e0+0,8994d3+31,060ca8+100", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff12bb2be10 @tempfile=#<Tempfile:/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/RackMultipart20170416-7442-wpwvg8.jpeg>, @original_filename="feet.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"interest[image]\"; filename=\"feet.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "board_id"=>"10"}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-zgvzpo.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-8c6ggk.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-8c6ggk.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-8c6ggk.jpeg[0]' -auto-orient -resize "300x300>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/aa114d0d44f9d58d82039c5835f2f4d220170416-7442-1jnnt7z'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-8c6ggk.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-8c6ggk.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-8c6ggk.jpeg[0]' -auto-orient -resize "100x100>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/aa114d0d44f9d58d82039c5835f2f4d220170416-7442-1ueogu1'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-7442-12cx30t.jpeg'
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "interests" ("name", "description", "user_id", "board_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "flexibility"], ["description", "form practice"], ["user_id", 1], ["board_id", 10], ["created_at", 2017-04-16 18:19:37 UTC], ["updated_at", 2017-04-16 18:19:37 UTC], ["image_file_name", "feet.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 18812], ["image_updated_at", 2017-04-16 18:19:37 UTC], ["url", "http://colorzilla.com/gradient-editor/#7488e0+0,8994d3+31,060ca8+100"]]
+[paperclip] saving /interests/images/000/000/017/original/feet.jpeg
+  [1m[35m (0.8ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 2368ms (ActiveRecord: 1.9ms)
+
+
+  
+Seahorse::Client::NetworkingError (unable to connect to `s3.AWS_REGION.amazonaws.com`; SocketError: getaddrinfo: nodename nor servname provided, or not known):
+  
+app/controllers/interests_controller.rb:43:in `block in create'
+app/controllers/interests_controller.rb:42:in `create'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.7ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (110.6ms)
+Started GET "/" for 127.0.0.1 at 2017-04-16 13:20:08 -0500
+Started HEAD "/" for 127.0.0.1 at 2017-04-16 13:20:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/iNjaro/Sites/Rails_Apps/tCircle/app/controllers/application_controller.rb:3)
+Processing by HomeController#index as HTML
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/iNjaro/Sites/Rails_Apps/tCircle/app/controllers/application_controller.rb:3)
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (38.3ms)
+  Rendered home/index.html.erb within layouts/application (316.9ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 552ms (Views: 531.2ms | ActiveRecord: 0.0ms)
+
+
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 647ms (Views: 585.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/interests/new" for 127.0.0.1 at 2017-04-16 13:20:16 -0500
+Processing by InterestsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering interests/new.html.erb within layouts/application
+  [1m[36mBoard Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "boards" WHERE "boards"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered interests/_form.html.erb (125.6ms)
+  Rendered interests/new.html.erb within layouts/application (128.4ms)
+  Rendered layouts/_header.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 371ms (Views: 257.2ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/interests" for 127.0.0.1 at 2017-04-16 13:20:37 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cTaSe84b9BjYmRVaJd9fFf2xVhMoR8In3qO5g0gcLjfmeUieinH/mrAlrGKs1eTJB9NGdqixrEKu3QiaVYmFOg==", "interest"=>{"name"=>"flexibility", "description"=>"form practice", "url"=>"http://colorzilla.com/gradient-editor/#7488e0+0,8994d3+31,060ca8+100", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe112480b98 @tempfile=#<Tempfile:/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/RackMultipart20170416-9248-103jhdy.jpeg>, @original_filename="feet.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"interest[image]\"; filename=\"feet.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "board_id"=>"10"}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-17kcned.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-io06u3.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-io06u3.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-io06u3.jpeg[0]' -auto-orient -resize "300x300>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/87d50d3e8a57480508b0372b0b62132020170416-9248-1c2k2r3'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-io06u3.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-io06u3.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-io06u3.jpeg[0]' -auto-orient -resize "100x100>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/87d50d3e8a57480508b0372b0b62132020170416-9248-kh3ecb'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-xhk1pg.jpeg'
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "interests" ("name", "description", "user_id", "board_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "flexibility"], ["description", "form practice"], ["user_id", 1], ["board_id", 10], ["created_at", 2017-04-16 18:20:37 UTC], ["updated_at", 2017-04-16 18:20:37 UTC], ["image_file_name", "feet.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 18812], ["image_updated_at", 2017-04-16 18:20:37 UTC], ["url", "http://colorzilla.com/gradient-editor/#7488e0+0,8994d3+31,060ca8+100"]]
+[paperclip] saving /interests/images/000/000/017/original/feet.jpeg
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 945ms (ActiveRecord: 3.9ms)
+
+
+  
+Aws::S3::Errors::InvalidAccessKeyId (The AWS Access Key Id you provided does not exist in our records.):
+  
+app/controllers/interests_controller.rb:43:in `block in create'
+app/controllers/interests_controller.rb:42:in `create'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.3ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (105.0ms)
+Started POST "/interests" for 127.0.0.1 at 2017-04-16 13:21:29 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cTaSe84b9BjYmRVaJd9fFf2xVhMoR8In3qO5g0gcLjfmeUieinH/mrAlrGKs1eTJB9NGdqixrEKu3QiaVYmFOg==", "interest"=>{"name"=>"flexibility", "description"=>"form practice", "url"=>"http://colorzilla.com/gradient-editor/#7488e0+0,8994d3+31,060ca8+100", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fe119ae9de8 @tempfile=#<Tempfile:/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/RackMultipart20170416-9248-7slcfx.jpeg>, @original_filename="feet.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"interest[image]\"; filename=\"feet.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "board_id"=>"10"}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-m1g3jf.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-redkqy.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-redkqy.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-redkqy.jpeg[0]' -auto-orient -resize "300x300>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/b35fe96f87aebd8a1f54b556f50524fa20170416-9248-9zfnxi'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-redkqy.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-redkqy.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-redkqy.jpeg[0]' -auto-orient -resize "100x100>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/b35fe96f87aebd8a1f54b556f50524fa20170416-9248-exzu3z'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9248-18dejxx.jpeg'
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "interests" ("name", "description", "user_id", "board_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "flexibility"], ["description", "form practice"], ["user_id", 1], ["board_id", 10], ["created_at", 2017-04-16 18:21:29 UTC], ["updated_at", 2017-04-16 18:21:29 UTC], ["image_file_name", "feet.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 18812], ["image_updated_at", 2017-04-16 18:21:29 UTC], ["url", "http://colorzilla.com/gradient-editor/#7488e0+0,8994d3+31,060ca8+100"]]
+[paperclip] saving /interests/images/000/000/017/original/feet.jpeg
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 830ms (ActiveRecord: 2.7ms)
+
+
+  
+Aws::S3::Errors::InvalidAccessKeyId (The AWS Access Key Id you provided does not exist in our records.):
+  
+app/controllers/interests_controller.rb:43:in `block in create'
+app/controllers/interests_controller.rb:42:in `create'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.0ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (107.1ms)
+Started HEAD "/" for 127.0.0.1 at 2017-04-16 13:22:28 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/iNjaro/Sites/Rails_Apps/tCircle/app/controllers/application_controller.rb:3)
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (282.8ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 512ms (Views: 492.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/interests" for 127.0.0.1 at 2017-04-16 13:22:40 -0500
+Processing by InterestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cTaSe84b9BjYmRVaJd9fFf2xVhMoR8In3qO5g0gcLjfmeUieinH/mrAlrGKs1eTJB9NGdqixrEKu3QiaVYmFOg==", "interest"=>{"name"=>"flexibility", "description"=>"form practice", "url"=>"http://colorzilla.com/gradient-editor/#7488e0+0,8994d3+31,060ca8+100", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fb74cb93858 @tempfile=#<Tempfile:/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/RackMultipart20170416-9537-1dod55y.jpeg>, @original_filename="feet.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"interest[image]\"; filename=\"feet.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "board_id"=>"10"}, "commit"=>"Create Interest"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9537-owmnk8.jpeg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9537-h7fztd.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9537-h7fztd.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9537-h7fztd.jpeg[0]' -auto-orient -resize "300x300>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/c6870c6405f2253a3da945465a904dd620170416-9537-1nquag5'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9537-h7fztd.jpeg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9537-h7fztd.jpeg[0]'
+Command :: convert '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9537-h7fztd.jpeg[0]' -auto-orient -resize "100x100>" '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/c6870c6405f2253a3da945465a904dd620170416-9537-1iua7ue'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/l0/b40dz04d3v12g9pwz5s_yb6h0000gp/T/e03f9063484fb1967d1675c86a6094d720170416-9537-71yww0.jpeg'
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "interests" ("name", "description", "user_id", "board_id", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "url") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "flexibility"], ["description", "form practice"], ["user_id", 1], ["board_id", 10], ["created_at", 2017-04-16 18:22:41 UTC], ["updated_at", 2017-04-16 18:22:41 UTC], ["image_file_name", "feet.jpeg"], ["image_content_type", "image/jpeg"], ["image_file_size", 18812], ["image_updated_at", 2017-04-16 18:22:41 UTC], ["url", "http://colorzilla.com/gradient-editor/#7488e0+0,8994d3+31,060ca8+100"]]
+[paperclip] saving /interests/images/000/000/017/original/feet.jpeg
+[paperclip] saving /interests/images/000/000/017/medium/feet.jpeg
+[paperclip] saving /interests/images/000/000/017/thumb/feet.jpeg
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/interests
+Completed 302 Found in 1793ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/interests" for 127.0.0.1 at 2017-04-16 13:22:42 -0500
+Processing by InterestsController#index as HTML
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.4ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered interests/index.html.erb within layouts/application (111.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (8.8ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 268ms (Views: 262.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/interests/15" for 127.0.0.1 at 2017-04-16 13:23:09 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 15]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (57.9ms)
+  Rendered layouts/_header.html.erb (5.3ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 160ms (Views: 154.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/interests/15" for 127.0.0.1 at 2017-04-16 13:23:15 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 15]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 110ms (Views: 105.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/interests/15" for 127.0.0.1 at 2017-04-16 13:24:09 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mInterest Load (0.1ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 15]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_header.html.erb (4.1ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 118ms (Views: 114.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/boards/10" for 127.0.0.1 at 2017-04-16 13:28:10 -0500
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering boards/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT "interests".* FROM "interests" WHERE "interests"."board_id" = ?[0m  [["board_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered boards/show.html.erb within layouts/application (25.3ms)
+  Rendered layouts/_header.html.erb (4.1ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 137ms (Views: 121.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/interests/14" for 127.0.0.1 at 2017-04-16 13:28:15 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mInterest Load (0.1ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 14]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_header.html.erb (4.2ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 97ms (Views: 93.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/interests/15" for 127.0.0.1 at 2017-04-16 13:28:21 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mInterest Load (0.5ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 15]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (10.8ms)
+  Rendered layouts/_header.html.erb (5.0ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 128ms (Views: 122.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/interests/15" for 127.0.0.1 at 2017-04-16 13:28:25 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mInterest Load (0.1ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 15]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (10.7ms)
+  Rendered layouts/_header.html.erb (5.2ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 112ms (Views: 108.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/interests" for 127.0.0.1 at 2017-04-16 13:34:18 -0500
+Processing by InterestsController#index as HTML
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered interests/index.html.erb within layouts/application (86.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (8.1ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 180ms (Views: 175.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/images/interests/images/000/000/017/medium/feet.jpeg" for 127.0.0.1 at 2017-04-16 13:34:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/interests/images/000/000/017/medium/feet.jpeg"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:152:in `accept_and_process_next_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:113:in `main_loop'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler.rb:416:in `block (3 levels) in start_threads'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered collection of /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [43 times] (60.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (11.5ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (252.0ms)
+Started GET "/interests/17" for 127.0.0.1 at 2017-04-16 13:34:32 -0500
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mInterest Load (0.2ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 17]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_header.html.erb (5.8ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 120ms (Views: 116.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images/interests/images/000/000/017/medium/feet.jpeg" for 127.0.0.1 at 2017-04-16 13:34:32 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/interests/images/000/000/017/medium/feet.jpeg"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:152:in `accept_and_process_next_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:113:in `main_loop'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler.rb:416:in `block (3 levels) in start_threads'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered collection of /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [43 times] (26.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (232.9ms)
+Started GET "/images/interests/images/000/000/017/medium/feet.jpeg" for 127.0.0.1 at 2017-04-16 13:34:38 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/interests/images/000/000/017/medium/feet.jpeg"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:152:in `accept_and_process_next_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:113:in `main_loop'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler.rb:416:in `block (3 levels) in start_threads'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered collection of /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [43 times] (23.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.3ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (212.2ms)
+Started GET "/images/interests/images/000/000/017/medium/feet.jpeg" for 127.0.0.1 at 2017-04-16 13:34:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/interests/images/000/000/017/medium/feet.jpeg"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:152:in `accept_and_process_next_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:113:in `main_loop'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler.rb:416:in `block (3 levels) in start_threads'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered collection of /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [43 times] (21.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (189.2ms)
+Started GET "/interests/15" for 127.0.0.1 at 2017-04-16 13:34:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/iNjaro/Sites/Rails_Apps/tCircle/app/controllers/application_controller.rb:3)
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mInterest Load (0.4ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 15]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (136.3ms)
+  Rendered layouts/_header.html.erb (4.8ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 763ms (Views: 711.6ms | ActiveRecord: 4.7ms)
+
+
+Started HEAD "/" for 127.0.0.1 at 2017-04-16 13:37:53 -0500
+Started GET "/images/interests/images/000/000/017/medium/feet.jpeg" for 127.0.0.1 at 2017-04-16 13:37:54 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/interests" for 127.0.0.1 at 2017-04-16 13:37:54 -0500
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/iNjaro/Sites/Rails_Apps/tCircle/app/controllers/application_controller.rb:3)
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/images/interests/images/000/000/017/medium/feet.jpeg"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:152:in `accept_and_process_next_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:113:in `main_loop'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler.rb:416:in `block (3 levels) in start_threads'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/iNjaro/Sites/Rails_Apps/tCircle/app/controllers/application_controller.rb:3)
+Processing by InterestsController#index as HTML
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.7ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered collection of /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [43 times] (43.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (26.4ms)
+  Rendered home/index.html.erb within layouts/application (634.4ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (23.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (426.2ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 1047ms (Views: 1012.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered interests/index.html.erb within layouts/application (898.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (39.5ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 1146ms (Views: 1087.8ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/images/interests/images/000/000/017/medium/feet.jpeg" for 127.0.0.1 at 2017-04-16 13:37:56 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/interests/images/000/000/017/medium/feet.jpeg"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:152:in `accept_and_process_next_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:113:in `main_loop'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler.rb:416:in `block (3 levels) in start_threads'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered collection of /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [43 times] (20.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (12.6ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (170.5ms)
+Started GET "/images/interests/images/000/000/017/medium/feet.jpeg" for 127.0.0.1 at 2017-04-16 13:38:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/interests/images/000/000/017/medium/feet.jpeg"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:152:in `accept_and_process_next_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:113:in `main_loop'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler.rb:416:in `block (3 levels) in start_threads'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered collection of /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [43 times] (34.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.3ms)
+Started GET "/interests/17" for 127.0.0.1 at 2017-04-16 13:38:13 -0500
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /Users/iNjaro/Sites/Rails_Apps/tCircle/app/controllers/application_controller.rb:3)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (230.1ms)
+Processing by InterestsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mInterest Load (0.3ms)[0m  [1m[34mSELECT  "interests".* FROM "interests" WHERE "interests"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering interests/show.html.erb within layouts/application
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."interest_id" = ?[0m  [["interest_id", 17]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered interests/show.html.erb within layouts/application (139.1ms)
+  Rendered layouts/_header.html.erb (7.4ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 812ms (Views: 758.4ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-16 13:39:40 -0500
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (37.4ms)
+  Rendered layouts/_header.html.erb (5.7ms)
+  Rendered layouts/_footer.html.erb (2.0ms)
+Completed 200 OK in 195ms (Views: 190.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/interests" for 127.0.0.1 at 2017-04-16 13:39:43 -0500
+Processing by InterestsController#index as HTML
+Started GET "/images/interests/images/000/000/017/medium/feet.jpeg" for 127.0.0.1 at 2017-04-16 13:39:43 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/interests/images/000/000/017/medium/feet.jpeg"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:152:in `accept_and_process_next_request'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler/thread_handler.rb:113:in `main_loop'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/request_handler.rb:416:in `block (3 levels) in start_threads'
+passenger (5.1.2) src/ruby_supportlib/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+  Rendering interests/index.html.erb within layouts/application
+  [1m[36mInterest Load (0.5ms)[0m  [1m[34mSELECT "interests".* FROM "interests"[0m
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.1ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "boards".* FROM "boards" WHERE "boards"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered interests/index.html.erb within layouts/application (181.1ms)
+  Rendered collection of /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [43 times] (23.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.9ms)
+  Rendering /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (213.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (8.5ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 369ms (Views: 343.0ms | ActiveRecord: 5.0ms)
+
+
