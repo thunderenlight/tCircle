@@ -2,20 +2,19 @@
     <p> You must have at least one board to create a new interest</p>
     <p>Please create a new pin:</p><br>
     	<%= link_to "create a new board", new_board_path  %>
-    	<% end %>
+    <% else %>
+      <%= form_for @interest , html: { multipart: true } do |f| %>
+        <% if @interest.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@interest.errors.count, "error") %> prohibited this interest from being saved:</h2>
 
-<%= form_for @interest , html: { multipart: true } do |f| %>
-  <% if @interest.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@interest.errors.count, "error") %> prohibited this interest from being saved:</h2>
-
-      <ul>
-      <% @interest.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+            <ul>
+            <% @interest.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
     
     <div class="form-group">
       <%= f.label :name %><br>
@@ -41,4 +40,5 @@
     <div class="actions">
       <%= f.submit class: 'btn btn-primary' %>
     </div>
+  <% end %>
 <% end %>
